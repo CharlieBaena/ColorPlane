@@ -20,7 +20,7 @@ public class MovimientoFondo : MonoBehaviour
 
     public void CambiarFondo()
     {
-        print("mierda");
+        //print("mierda");
         //myMaterial = myMateria2;
     }
 }

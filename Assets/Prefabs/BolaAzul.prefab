@@ -73,5 +73,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BolaAzul
       objectReference: {fileID: 0}
+    - target: {fileID: 4990722659761786810, guid: 9e52bd38cd8f15648954aa0defaf0413,
+        type: 3}
+      propertyPath: timeToDestroy
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e52bd38cd8f15648954aa0defaf0413, type: 3}
