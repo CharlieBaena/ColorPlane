@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovimientoFondo : MonoBehaviour
 {
-    private Material myMaterial;
+    private Material myMaterial;//, myMateria2;
 
     // Start is called before the first frame update
     void Start()
@@ -16,5 +16,11 @@ public class MovimientoFondo : MonoBehaviour
     void Update()
     {
         myMaterial.mainTextureOffset = myMaterial.mainTextureOffset + Vector2.right * 0.5f * Time.deltaTime;  // --->(1,0) * 0.5 ....
+    }
+
+    public void CambiarFondo()
+    {
+        print("mierda");
+        //myMaterial = myMateria2;
     }
 }

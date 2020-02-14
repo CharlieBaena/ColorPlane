@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovimientoBarrera : MonoBehaviour
+public class MovimientoBolas : MonoBehaviour
 {
     private Transform myPosition;
-    public float speed = 5;
+    public float speed = 10;
     public float timeToDestroy;
 
     // Start is called before the first frame update
