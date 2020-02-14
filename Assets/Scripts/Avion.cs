@@ -10,7 +10,28 @@ public class Avion : MonoBehaviour
     private int puntos = 0;
     private bool isDead;
     private AudioSource emisorAudio;
-    List<string> n = new List<string>() { "when", "I", "Saw", "Her", "Face" };
+    List<string> n = new List<string>() {"I thought love was only true in fairy tales",
+                                            "Meant for someone else but not for me",
+                                            "Love was out to get me",
+                                            "That's the way it seemed",
+                                            "Disappointment haunted all of my dreams",
+                                            "Then I saw her face, now I'm a believer",
+                                            "Not a trace, of doubt in my mind",
+                                            "I'm in love, and I'm a believer",
+                                            "I couldn't leave her if I tried",
+                                            "I thought love was more or less a giving thing",
+                                            "The more I gave the less I got oh yeah",
+                                            "What's the use in tryin'",
+                                            "All you get is pain",
+                                            "When I wanted sunshine I got rain",
+                                            "Then I saw her face, now I'm a believer",
+                                            "Not a trace, of doubt in my mind",
+                                            "I'm in love, I'm a believer",
+                                            "I couldn't leave her if I tried",
+                                            "What's the use of trying",
+                                            "All you get is pain",
+                                            "When I wanted sunshine I got rain",
+                                            "Then I saw her face, now I'm a"};
     public Text letra;
     private int i = 0,j=0;
 
@@ -29,11 +50,11 @@ public class Avion : MonoBehaviour
     {
         myRB = GetComponent<Rigidbody2D>();
         emisorAudio = GetComponent<AudioSource>();
-        panelMuerte.SetActive(false);
+        //panelMuerte.SetActive(false);
         isDead = false;
         //MostrarTextoAleatorio();
         Debug.Log("Prueba");
-        InvokeRepeating("ImprimirLetra", 0f, 5);
+        InvokeRepeating("ImprimirLetra", 0f, 3);
 
     }
 
@@ -52,7 +73,7 @@ public class Avion : MonoBehaviour
 
     void ImprimirLetra()
     {
-        if (i == 5)
+        if (i == n.Count)
             i = 0;
 
         letra.text = n[i];
