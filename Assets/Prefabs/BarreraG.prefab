@@ -23,6 +23,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BarreraG
       objectReference: {fileID: 0}
+    - target: {fileID: 5399028553012165475, guid: 0ce7568f1b4f6e4409ae977beba0fe2d,
+        type: 3}
+      propertyPath: m_TagString
+      value: BarreraSimple
+      objectReference: {fileID: 0}
     - target: {fileID: 6751433246557659218, guid: 0ce7568f1b4f6e4409ae977beba0fe2d,
         type: 3}
       propertyPath: m_LocalPosition.x

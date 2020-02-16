@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2738770967640933296, guid: 0d1f45860d012ab4f93946166a51e3e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: BarreraSimple
+      objectReference: {fileID: 0}
     - target: {fileID: 2838975757938547495, guid: 0d1f45860d012ab4f93946166a51e3e6,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x

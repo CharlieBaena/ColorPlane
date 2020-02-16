@@ -6,6 +6,11 @@ TagManager:
   tags:
   - ContadorPuntos
   - Pared
+  - ColliderRojo
+  - ColliderVerde
+  - ColliderAzul
+  - BarreraSimple
+  - BarreraCombinada
   layers:
   - Default
   - TransparentFX
