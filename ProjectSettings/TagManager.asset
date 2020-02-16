@@ -11,6 +11,7 @@ TagManager:
   - ColliderAzul
   - BarreraSimple
   - BarreraCombinada
+  - music
   layers:
   - Default
   - TransparentFX
