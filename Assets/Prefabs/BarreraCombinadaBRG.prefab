@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1427740252, guid: 5cda89471f972ed4fbbc4e3954bb1e4b, type: 3}
+      propertyPath: m_TagString
+      value: ColliderAzul
+      objectReference: {fileID: 0}
     - target: {fileID: 1427740253, guid: 5cda89471f972ed4fbbc4e3954bb1e4b, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3.7

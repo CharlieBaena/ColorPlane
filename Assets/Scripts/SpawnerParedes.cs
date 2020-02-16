@@ -8,7 +8,8 @@ public class SpawnerParedes : MonoBehaviour
                     prefabMuroCombinado1, prefabMuroCombinado2, prefabMuroCombinado3,
                     prefabMuroCombinado4, prefabMuroCombinado5, prefabMuroCombinado6;
     public float  tiempoEntreSpawns;
-    
+    public int nivelMurosCombinados; 
+
     private int cont;
 
     // Start is called before the first frame update
@@ -21,7 +22,7 @@ public class SpawnerParedes : MonoBehaviour
     void SpawnObstaculo()
     {
         int random;
-        if (cont < 1)
+        if (cont < nivelMurosCombinados)
         {
             random = Random.Range(0, 3);
             switch (random)
