@@ -634,7 +634,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 393671475}
+      - m_Target: {fileID: 393671476}
         m_MethodName: CloseApp
         m_Mode: 1
         m_Arguments:
@@ -840,7 +840,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 393671475}
+      - m_Target: {fileID: 393671476}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
