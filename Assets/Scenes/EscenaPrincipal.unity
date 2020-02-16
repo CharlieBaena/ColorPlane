@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 301787356}
   m_Layer: 0
   m_Name: ParedInferior
-  m_TagString: Untagged
+  m_TagString: Pared
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -688,7 +688,7 @@ GameObject:
   - component: {fileID: 538189109}
   m_Layer: 0
   m_Name: ParedSuperior
-  m_TagString: Untagged
+  m_TagString: Pared
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -769,7 +769,7 @@ MonoBehaviour:
   prefabMuroBolaAzul: {fileID: 4820128583398467990, guid: 4fc3b496ed717e343a2ce0112320903e,
     type: 3}
   tiempoEntreSpawns: 0.2
-  spawnRandomRange: 5
+  spawnRandomRange: 3
 --- !u!4 &551561760
 Transform:
   m_ObjectHideFlags: 0
@@ -1687,7 +1687,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.613
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1903,6 +1903,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3079899493226775531, guid: 715207949636cec40b8c0237df10cce4,
         type: 3}
+    - target: {fileID: 3333216941215875467, guid: dea1ac7744059d64a8dfa0c6465b00fd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333216941215875468, guid: dea1ac7744059d64a8dfa0c6465b00fd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3333216941215875469, guid: dea1ac7744059d64a8dfa0c6465b00fd,
         type: 3}
       propertyPath: m_Name

@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1337309562278502485, guid: 0d1f45860d012ab4f93946166a51e3e6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2838975757938547495, guid: 0d1f45860d012ab4f93946166a51e3e6,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -71,6 +76,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BarreraB
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993470888893366234, guid: 0d1f45860d012ab4f93946166a51e3e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: ContadorPuntos
       objectReference: {fileID: 0}
     - target: {fileID: 8895269446351927685, guid: 0d1f45860d012ab4f93946166a51e3e6,
         type: 3}

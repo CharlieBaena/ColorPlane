@@ -13,6 +13,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -4374951666414472752, guid: 972f740d24aa3cf4cbe3ceb91bba370e,
         type: 3}
+    - target: {fileID: 3462334284521037934, guid: 0ce7568f1b4f6e4409ae977beba0fe2d,
+        type: 3}
+      propertyPath: m_TagString
+      value: ContadorPuntos
+      objectReference: {fileID: 0}
     - target: {fileID: 5399028553012165475, guid: 0ce7568f1b4f6e4409ae977beba0fe2d,
         type: 3}
       propertyPath: m_Name
@@ -72,6 +77,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7480446094571323361, guid: 0ce7568f1b4f6e4409ae977beba0fe2d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ce7568f1b4f6e4409ae977beba0fe2d, type: 3}

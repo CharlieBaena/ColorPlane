@@ -44,10 +44,8 @@ public class Avion : MonoBehaviour
         panelMuerte.SetActive(false);
         isDead = false;
         avionSeleccionado = GetComponent<SpriteRenderer>().sprite;
-        //print("El nombre que sale es = " + avionSeleccionado.name);
-
         mFondo = fondo.GetComponent<MovimientoFondo>();   // Find("Scripts").GetComponent(typeof(MovimientoFondo)) as MovimientoFondo;
-
+        Time.timeScale = 1f;
 
         /*MostrarTextoAleatorio();
         Debug.Log("Prueba");
@@ -73,171 +71,133 @@ public class Avion : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        switch (collision.gameObject.GetComponent<SpriteRenderer>().sprite.name)
+        if (collision.gameObject.CompareTag("ContadorPuntos"))
         {
-            case "spritesColorPlane_PickUpsYPlaneTrans_0": //Bola Roja
-
-                GetComponent<SpriteRenderer>().sprite = avionRojo;
-                avionSeleccionado = avionRojo;
-                break;
-
-            case "spritesColorPlane_PickUpsYPlaneTrans_1": //Bola verde
-
-                GetComponent<SpriteRenderer>().sprite = avionVerde;
-                avionSeleccionado = avionVerde;
-                break;
-
-            case "spritesColorPlane_PickUpsYPlaneTrans_2": //Bola Azul
-
-                GetComponent<SpriteRenderer>().sprite = avionAzul;
-                avionSeleccionado = avionAzul;
-                break;
-
-            default:
-
-                puntos++;
+            if (!isDead)
+            {
+                puntos += 1;
                 emisorAudio.PlayOneShot(sonidoPuntos);
                 marcadorDePuntos.text = puntos.ToString();
-                break;
-
+            }
         }
-        
-        
-        
-        /*puntos = puntos + 1;
-        emisorAudio.PlayOneShot(sonidoPuntos);
-        marcadorDePuntos.text = puntos.ToString();*/
+        else
+        {
+            switch (collision.gameObject.GetComponent<SpriteRenderer>().sprite.name)
+            {
+                case "spritesColorPlane_PickUpsYPlaneTrans_0": //Bola Roja
+
+                    GetComponent<SpriteRenderer>().sprite = avionRojo;
+                    avionSeleccionado = avionRojo;
+                    break;
+
+                case "spritesColorPlane_PickUpsYPlaneTrans_1": //Bola verde
+
+                    GetComponent<SpriteRenderer>().sprite = avionVerde;
+                    avionSeleccionado = avionVerde;
+                    break;
+
+                case "spritesColorPlane_PickUpsYPlaneTrans_2": //Bola Azul
+
+                    GetComponent<SpriteRenderer>().sprite = avionAzul;
+                    avionSeleccionado = avionAzul;
+                    break;
+
+            }
+        }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+
 
         if (PlayerPrefs.GetInt("highscore") < puntos)
         {
             PlayerPrefs.SetInt("highscore", puntos);
         }
-        
-        
-        switch (avionSeleccionado.name)
+
+        if (collision.gameObject.CompareTag("Pared"))
         {
-            case "spritesColorPlane_PickUpsYPlaneTrans_3": //avion blanco
-                emisorAudio.PlayOneShot(sonidoGolpe);
-                emisorAudio.PlayOneShot(sonidoMuerte);
-                isDead = true;
-                panelMuerte.SetActive(true);
-                mFondo.CambiarFondo();
-                //Time.timeScale = 0.1f;
-                break;
+            Morir();
+        } else {
 
-            case "spritesColorPlane_PickUpsYPlaneTrans_4": //avion rojo
-                
-                switch (collision.gameObject.GetComponentInChildren<SpriteRenderer>().sprite.name)
-                {
-                    case "spritesColorPlane_BarrerasSimples_0":  //Barrera roja
-                        isDead = false;
-                        collision.gameObject.SetActive(false);
-                        break;
-                    case "spritesColorPlane_BarrerasSimples_2":  //Barrera verde
-                        emisorAudio.PlayOneShot(sonidoGolpe);
-                        emisorAudio.PlayOneShot(sonidoMuerte);
-                        isDead = true;
-                        panelMuerte.SetActive(true);
-                        mFondo.CambiarFondo();
-                        //Time.timeScale = 0.1f;
-                        break;
-                    case "spritesColorPlane_BarrerasSimples_1":  //Barrera azul
-                        emisorAudio.PlayOneShot(sonidoGolpe);
-                        emisorAudio.PlayOneShot(sonidoMuerte);
-                        isDead = true;
-                        panelMuerte.SetActive(true);
-                        mFondo.CambiarFondo();
-                        //Time.timeScale = 0.1f;
-                        break;
-                }
-
-                break;
-
-            case "spritesColorPlane_PickUpsYPlaneTrans_5": //avion Verde
-
-                switch (collision.gameObject.GetComponentInChildren<SpriteRenderer>().sprite.name)
-                {
-                    case "spritesColorPlane_BarrerasSimples_0":  //Barrera roja
-
-                        emisorAudio.PlayOneShot(sonidoGolpe);
-                        emisorAudio.PlayOneShot(sonidoMuerte);
-                        isDead = true;
-                        panelMuerte.SetActive(true);
-                        mFondo.CambiarFondo();
-                        //Time.timeScale = 0.1f;
-                        break;
-
-                    case "spritesColorPlane_BarrerasSimples_2":  //Barrera verde
-
-                        isDead = false;
-                        collision.gameObject.SetActive(false);
-                        break;
-
-                    case "spritesColorPlane_BarrerasSimples_1":  //Barrera azul
-
-                        emisorAudio.PlayOneShot(sonidoGolpe);
-                        emisorAudio.PlayOneShot(sonidoMuerte);
-                        isDead = true;
-                        panelMuerte.SetActive(true);
-                        mFondo.CambiarFondo();
-                        //Time.timeScale = 0.1f;
-                        break;
-                }
-
-                break;
-
-            case "spritesColorPlane_PickUpsYPlaneTrans_6": //avion Azul
-
-                switch (collision.gameObject.GetComponentInChildren<SpriteRenderer>().sprite.name)
-                {
-                    case "spritesColorPlane_BarrerasSimples_0":  //Barrera roja
-
-                        emisorAudio.PlayOneShot(sonidoGolpe);
-                        emisorAudio.PlayOneShot(sonidoMuerte);
-                        isDead = true;
-                        panelMuerte.SetActive(true);
-                        mFondo.CambiarFondo();
-                        //Time.timeScale = 0.1f;
-                        break;
-
-                    case "spritesColorPlane_BarrerasSimples_2":  //Barrera verde
-
-                        emisorAudio.PlayOneShot(sonidoGolpe);
-                        emisorAudio.PlayOneShot(sonidoMuerte);
-                        isDead = true;
-                        panelMuerte.SetActive(true);
-                        mFondo.CambiarFondo();
-                        //Time.timeScale = 0.1f;
-                        break;
-                   
-                    case "spritesColorPlane_BarrerasSimples_1":  //Barrera azul
-
-                        isDead = false;
-                        collision.gameObject.SetActive(false);                        
-                        break;
-                }
-
-                break;
-        }
-
-        if(avionSeleccionado.name == "spritesColorPlane_PickUpsYPlaneTrans_4")
-        {
-            if(collision.gameObject.GetComponentInChildren<SpriteRenderer>().sprite.name == "spritesColorPlane_BarrerasSimples_0")
+            switch (avionSeleccionado.name)
             {
+                case "spritesColorPlane_PickUpsYPlaneTrans_3": //avion blanco
+                    Morir();
+                    break;
 
+                case "spritesColorPlane_PickUpsYPlaneTrans_4": //avion rojo
+
+                    switch (collision.gameObject.GetComponentInChildren<SpriteRenderer>().sprite.name)
+                    {
+                        case "spritesColorPlane_BarrerasSimples_0":  //Barrera roja
+
+                            isDead = false;
+                            collision.gameObject.SetActive(false);
+                            break;
+
+                        case "spritesColorPlane_BarrerasSimples_2":  //Barrera verde
+
+                            Morir();
+                            break;
+
+                        case "spritesColorPlane_BarrerasSimples_1":  //Barrera azul
+
+                            Morir();
+                            break;
+                    }
+
+                    break;
+
+                case "spritesColorPlane_PickUpsYPlaneTrans_5": //avion Verde
+
+                    switch (collision.gameObject.GetComponentInChildren<SpriteRenderer>().sprite.name)
+                    {
+                        case "spritesColorPlane_BarrerasSimples_0":  //Barrera roja
+
+                            Morir();
+                            break;
+
+                        case "spritesColorPlane_BarrerasSimples_2":  //Barrera verde
+
+                            isDead = false;
+                            collision.gameObject.SetActive(false);
+                            break;
+
+                        case "spritesColorPlane_BarrerasSimples_1":  //Barrera azul
+
+                            Morir();
+                            break;
+                    }
+
+                    break;
+
+                case "spritesColorPlane_PickUpsYPlaneTrans_6": //avion Azul
+
+                    switch (collision.gameObject.GetComponentInChildren<SpriteRenderer>().sprite.name)
+                    {
+                        case "spritesColorPlane_BarrerasSimples_0":  //Barrera roja
+
+                            Morir();
+                            //Time.timeScale = 0.1f;
+                            break;
+
+                        case "spritesColorPlane_BarrerasSimples_2":  //Barrera verde
+
+                            Morir();
+                            break;
+
+                        case "spritesColorPlane_BarrerasSimples_1":  //Barrera azul
+
+                            isDead = false;
+                            collision.gameObject.SetActive(false);
+                            break;
+                    }
+
+                    break;
             }
         }
-
-        emisorAudio.PlayOneShot(sonidoGolpe);
-        emisorAudio.PlayOneShot(sonidoMuerte);
-        /*isDead = true;
-        panelMuerte.SetActive(true);
-        mFondo.CambiarFondo();*/
 
     }
 
@@ -254,9 +214,24 @@ public class Avion : MonoBehaviour
         }
     }
 
+    private void Morir()
+    {
+        emisorAudio.PlayOneShot(sonidoGolpe);
+        emisorAudio.PlayOneShot(sonidoMuerte);
+        isDead = true;
+        panelMuerte.SetActive(true);
+        mFondo.CambiarFondo();
 
+        Time.timeScale = 0.5f;
+        Esperar();
+        
+    }
 
-
+    IEnumerator Esperar()
+    {
+        yield return new WaitForSecondsRealtime(1);
+        Time.timeScale = 0f;
+    }
 
 
 
