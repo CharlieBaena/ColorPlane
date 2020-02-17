@@ -494,7 +494,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2879b9020acd92545882df5c023fca3c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1fcc14c67c7011142b5ff12aa63d833c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1017,7 +1017,7 @@ MonoBehaviour:
   prefabMuroCombinado6: {fileID: 1079449334294066936, guid: 2763bbc813dd09c4cbe1c7baed04e6d6,
     type: 3}
   tiempoEntreSpawns: 5
-  nivelMurosCombinados: 10
+  nivelMurosCombinados: 5
 --- !u!4 &841111761
 Transform:
   m_ObjectHideFlags: 0
