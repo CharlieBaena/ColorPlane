@@ -479,9 +479,9 @@ public class Avion : MonoBehaviour
         isDead = true;
         panelMuerte.SetActive(true);
         mFondo.CambiarFondo();
-        Time.timeScale = 0f;
-        //Time.timeScale = 0.5f;
-        Esperar();
+        //Time.timeScale = 0f;
+        Time.timeScale = 0.5f;
+        StartCoroutine(Esperar());
         
     }
 

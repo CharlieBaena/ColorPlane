@@ -1017,7 +1017,7 @@ MonoBehaviour:
   prefabMuroCombinado6: {fileID: 1079449334294066936, guid: 2763bbc813dd09c4cbe1c7baed04e6d6,
     type: 3}
   tiempoEntreSpawns: 5
-  nivelMurosCombinados: 5
+  nivelMurosCombinados: 0
 --- !u!4 &841111761
 Transform:
   m_ObjectHideFlags: 0
