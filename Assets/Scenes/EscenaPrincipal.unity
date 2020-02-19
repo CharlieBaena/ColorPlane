@@ -781,7 +781,7 @@ MonoBehaviour:
     type: 3}
   prefabMuroBolaAzul: {fileID: 4820128583398467990, guid: 4fc3b496ed717e343a2ce0112320903e,
     type: 3}
-  tiempoEntreSpawns: 0.2
+  tiempoEntreSpawns: 0.4
   spawnRandomRange: 3
 --- !u!4 &551561760
 Transform:
@@ -969,6 +969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2f34dfa6281fe74e97ce6b7fa233999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0.2
 --- !u!1 &841111759
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,8 +1017,8 @@ MonoBehaviour:
     type: 3}
   prefabMuroCombinado6: {fileID: 1079449334294066936, guid: 2763bbc813dd09c4cbe1c7baed04e6d6,
     type: 3}
-  tiempoEntreSpawns: 5
-  nivelMurosCombinados: 5
+  tiempoEntreSpawns: 3
+  nivelMurosCombinados: 10
 --- !u!4 &841111761
 Transform:
   m_ObjectHideFlags: 0

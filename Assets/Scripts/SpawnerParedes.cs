@@ -22,7 +22,7 @@ public class SpawnerParedes : MonoBehaviour
     void SpawnObstaculo()
     {
         int random;
-        if (cont < nivelMurosCombinados)
+        if (cont > nivelMurosCombinados)
         {
             random = Random.Range(0, 3);
             switch (random)

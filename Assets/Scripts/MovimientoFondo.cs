@@ -5,6 +5,7 @@ using UnityEngine;
 public class MovimientoFondo : MonoBehaviour
 {
     private Material myMaterial;//, myMateria2;
+    public float speed;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +16,7 @@ public class MovimientoFondo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        myMaterial.mainTextureOffset = myMaterial.mainTextureOffset + Vector2.right * 0.5f * Time.deltaTime;  // --->(1,0) * 0.5 ....
+        myMaterial.mainTextureOffset = myMaterial.mainTextureOffset + Vector2.right * speed * Time.deltaTime;  // --->(1,0) * 0.5 ....
     }
 
     public void CambiarFondo()
