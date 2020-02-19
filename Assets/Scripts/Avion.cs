@@ -18,7 +18,7 @@ public class Avion : MonoBehaviour
     public float speed = 5f;
     public Text marcadorDePuntos;
     public GameObject panelMuerte,fondo;
-    public AudioClip sonidoSalto, sonidoPuntos, sonidoGolpe, sonidoMuerte;
+    public AudioClip sonidoSalto, sonidoPuntos, sonidoBola, sonidoMuerte;
     public Sprite avionBlanco, avionRojo, avionVerde, avionAzul;
 
 
@@ -89,18 +89,21 @@ public class Avion : MonoBehaviour
 
                     GetComponent<SpriteRenderer>().sprite = avionRojo;
                     avionSeleccionado = avionRojo;
+                    emisorAudio.PlayOneShot(sonidoBola);
                     break;
 
                 case "spritesColorPlane_PickUpsYPlaneTrans_1": //Bola verde
 
                     GetComponent<SpriteRenderer>().sprite = avionVerde;
                     avionSeleccionado = avionVerde;
+                    emisorAudio.PlayOneShot(sonidoBola);
                     break;
 
                 case "spritesColorPlane_PickUpsYPlaneTrans_2": //Bola Azul
 
                     GetComponent<SpriteRenderer>().sprite = avionAzul;
                     avionSeleccionado = avionAzul;
+                    emisorAudio.PlayOneShot(sonidoBola);
                     break;
 
             }
@@ -474,7 +477,7 @@ public class Avion : MonoBehaviour
 
     private void Morir()
     {
-        emisorAudio.PlayOneShot(sonidoGolpe);
+        //emisorAudio.PlayOneShot(sonidoGolpe);
         emisorAudio.PlayOneShot(sonidoMuerte);
         isDead = true;
         panelMuerte.SetActive(true);
@@ -487,7 +490,7 @@ public class Avion : MonoBehaviour
 
     IEnumerator Esperar()
     {
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(0.5f);
         Time.timeScale = 0f;
     }
 
