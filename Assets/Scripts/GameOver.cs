@@ -21,6 +21,19 @@ public class GameOver : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("MenuPrincipal");
+        //SceneManager.LoadScene("MenuPrincipal");
+        Application.Quit();
+    }
+
+    public void FullScreen()
+    {
+        if (Screen.fullScreen)
+        {
+            Screen.SetResolution(1920, 1080, false);
+        }
+        else
+        {
+            Screen.SetResolution(1920, 1080, true);
+        }
     }
 }
