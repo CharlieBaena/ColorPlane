@@ -1807,22 +1807,22 @@ PrefabInstance:
         type: 3}
       propertyPath: sonidoMuerte
       value: 
-      objectReference: {fileID: 8300000, guid: 7b2bec0a3fe53d0448c071e61fa9ee29, type: 3}
+      objectReference: {fileID: 8300000, guid: 1dbd10554c7416847b5e7f38ddb45b2b, type: 3}
     - target: {fileID: 3333216941215875463, guid: dea1ac7744059d64a8dfa0c6465b00fd,
         type: 3}
       propertyPath: sonidoGolpe
       value: 
-      objectReference: {fileID: 8300000, guid: be70d04aa1909684f842f980c1f60109, type: 3}
+      objectReference: {fileID: 8300000, guid: c5d14ef8db6d65c4d90a38d1f850de61, type: 3}
     - target: {fileID: 3333216941215875463, guid: dea1ac7744059d64a8dfa0c6465b00fd,
         type: 3}
       propertyPath: sonidoPuntos
       value: 
-      objectReference: {fileID: 8300000, guid: d12f3ff4af2a72b46b99ff1bb419cc63, type: 3}
+      objectReference: {fileID: 8300000, guid: e5aa7a40e7ffe42428b2fc82d9e119d7, type: 3}
     - target: {fileID: 3333216941215875463, guid: dea1ac7744059d64a8dfa0c6465b00fd,
         type: 3}
       propertyPath: sonidoSalto
       value: 
-      objectReference: {fileID: 8300000, guid: ab4e66097a76aae4897e4448ff743112, type: 3}
+      objectReference: {fileID: 8300000, guid: 8f6188422123fc14483857d95375d3b0, type: 3}
     - target: {fileID: 3333216941215875463, guid: dea1ac7744059d64a8dfa0c6465b00fd,
         type: 3}
       propertyPath: panelMuerte
@@ -1862,6 +1862,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -3796884578902669906, guid: 715207949636cec40b8c0237df10cce4,
         type: 3}
+    - target: {fileID: 3333216941215875463, guid: dea1ac7744059d64a8dfa0c6465b00fd,
+        type: 3}
+      propertyPath: sonidoBola
+      value: 
+      objectReference: {fileID: 8300000, guid: c5d14ef8db6d65c4d90a38d1f850de61, type: 3}
     - target: {fileID: 3333216941215875464, guid: dea1ac7744059d64a8dfa0c6465b00fd,
         type: 3}
       propertyPath: m_LocalPosition.x
