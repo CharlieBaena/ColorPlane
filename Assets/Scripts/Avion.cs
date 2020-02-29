@@ -7,11 +7,12 @@ using UnityEngine.SceneManagement;
 public class Avion : MonoBehaviour
 {
     private Rigidbody2D myRB;
-    private int puntos = 0;
+    private static int puntos = 0;
     private bool isDead;
     private AudioSource emisorAudio;
     private MovimientoFondo mFondo;
     private Sprite avionSeleccionado;
+    private static bool primeraMuerte = true;
 
     //Para establecer un rango de valores
     [Range(3, 8)]
@@ -52,6 +53,7 @@ public class Avion : MonoBehaviour
         avionSeleccionado = GetComponent<SpriteRenderer>().sprite;
         mFondo = fondo.GetComponent<MovimientoFondo>();   // Find("Scripts").GetComponent(typeof(MovimientoFondo)) as MovimientoFondo;
         Time.timeScale = 1f;
+        marcadorDePuntos.text = puntos.ToString();
     }
 
     
@@ -477,15 +479,35 @@ public class Avion : MonoBehaviour
 
     private void Morir()
     {
-        //emisorAudio.PlayOneShot(sonidoGolpe);
         emisorAudio.PlayOneShot(sonidoMuerte);
         isDead = true;
         panelMuerte.SetActive(true);
         mFondo.CambiarFondo();
         //Time.timeScale = 0f;
         Time.timeScale = 0.5f;
+
         StartCoroutine(Esperar());
         
+    }
+
+    public bool GetPrimeraMuerte()
+    {
+        return primeraMuerte;
+    }
+
+    public void SetPrimeraMuerte(bool x)
+    {
+        primeraMuerte = x;
+    }
+
+    public int GetPuntos()
+    {
+        return puntos;
+    }
+
+    public void ReiniciarPuntos()
+    {
+        puntos = 0;
     }
 
     IEnumerator Esperar()
@@ -493,5 +515,6 @@ public class Avion : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.5f);
         Time.timeScale = 0f;
     }
+
 
 }

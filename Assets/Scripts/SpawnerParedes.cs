@@ -10,12 +10,11 @@ public class SpawnerParedes : MonoBehaviour
     public float  tiempoEntreSpawns;
     public int nivelMurosCombinados; 
 
-    private int cont;
+    private static int cont = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        cont = 0;
         InvokeRepeating("SpawnObstaculo", 0F, tiempoEntreSpawns);
     }
 
@@ -78,6 +77,15 @@ public class SpawnerParedes : MonoBehaviour
                     break;
             }
         }
-        //Instantiate(prefabMuroR, transform.position, Quaternion.identity);
+    }
+
+    public void ReiniciarContador()
+    {
+        cont = 0;
+    }
+
+    public void SetContador(int x)
+    {
+        cont = x;
     }
 }
