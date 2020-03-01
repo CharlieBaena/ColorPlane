@@ -11,14 +11,14 @@ public class Avion : MonoBehaviour
     private bool isDead;
     private AudioSource emisorAudio;
     private MovimientoFondo mFondo;
-    private Sprite avionSeleccionado;
+    private Sprite avionSeleccionado, avionSecundario, avionTemporal;
     private static bool primeraMuerte = true;
 
     //Para establecer un rango de valores
     [Range(3, 8)]
     public float speed = 5f;
     public Text marcadorDePuntos;
-    public GameObject panelMuerte,fondo;
+    public GameObject panelMuerte,fondo,botonCambiarAvion;
     public AudioClip sonidoSalto, sonidoPuntos, sonidoBola, sonidoMuerte;
     public Sprite avionBlanco, avionRojo, avionVerde, avionAzul;
 
@@ -51,6 +51,7 @@ public class Avion : MonoBehaviour
         panelMuerte.SetActive(false);
         isDead = false;
         avionSeleccionado = GetComponent<SpriteRenderer>().sprite;
+        avionSecundario = GetComponent<SpriteRenderer>().sprite;
         mFondo = fondo.GetComponent<MovimientoFondo>();   // Find("Scripts").GetComponent(typeof(MovimientoFondo)) as MovimientoFondo;
         Time.timeScale = 1f;
         marcadorDePuntos.text = puntos.ToString();
@@ -69,6 +70,11 @@ public class Avion : MonoBehaviour
                 emisorAudio.PlayOneShot(sonidoSalto);
             }
 
+        }
+
+        if(Input.GetMouseButtonDown(1))
+        {
+            CambiarColor();
         }
     }
 
@@ -482,7 +488,7 @@ public class Avion : MonoBehaviour
         emisorAudio.PlayOneShot(sonidoMuerte);
         isDead = true;
         panelMuerte.SetActive(true);
-        mFondo.CambiarFondo();
+        //mFondo.CambiarFondo();
         //Time.timeScale = 0f;
         Time.timeScale = 0.5f;
 
@@ -508,6 +514,16 @@ public class Avion : MonoBehaviour
     public void ReiniciarPuntos()
     {
         puntos = 0;
+    }
+
+    public void CambiarColor()
+    {
+        avionTemporal = avionSeleccionado;
+        avionSeleccionado = avionSecundario;
+        avionSecundario = avionTemporal;
+
+        GetComponent<SpriteRenderer>().sprite = avionSeleccionado;
+        botonCambiarAvion.GetComponent<Image>().sprite = avionSecundario;
     }
 
     IEnumerator Esperar()

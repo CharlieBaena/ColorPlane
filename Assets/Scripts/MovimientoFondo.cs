@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MovimientoFondo : MonoBehaviour
 {
-    private Material myMaterial;//, myMateria2;
+    private Material myMaterial;
+    public Material myMaterial2;
     public float speed;
 
     // Start is called before the first frame update
@@ -21,7 +22,7 @@ public class MovimientoFondo : MonoBehaviour
 
     public void CambiarFondo()
     {
-        //print("mierda");
-        //myMaterial = myMateria2;
+        GetComponent<Renderer>().material = myMaterial2;
+        myMaterial = myMaterial2;
     }
 }

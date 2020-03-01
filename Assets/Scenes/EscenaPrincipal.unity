@@ -567,7 +567,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 504221838}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1fcc14c67c7011142b5ff12aa63d833c, type: 3}
@@ -1638,7 +1638,7 @@ MonoBehaviour:
   highScoreText: {fileID: 1167962127}
   botonContinuar: {fileID: 1586347400}
   gameObjectAvion: {fileID: 1818076245}
-  gameObjectSpawner: {fileID: 0}
+  gameObjectSpawner: {fileID: 841111759}
 --- !u!82 &1466418008
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1649,7 +1649,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c5d14ef8db6d65c4d90a38d1f850de61, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3f11895037d38cd4abeabfa2e64bbced, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

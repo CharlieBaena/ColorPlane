@@ -1,16 +1,7 @@
 fileFormatVersion: 2
-guid: 972f740d24aa3cf4cbe3ceb91bba370e
+guid: 5aedc595f81ecbd44b29c4827c925446
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -9095293184882623434
-    second: spritesColorPlane_BarrerasSimples_0
-  - first:
-      213: -4190115669843508486
-    second: spritesColorPlane_BarrerasSimples_1
-  - first:
-      213: -4374951666414472752
-    second: spritesColorPlane_BarrerasSimples_2
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,16 +31,16 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -105,70 +96,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: spritesColorPlane_BarrerasSimples_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 20
-        height: 842
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e6a73c27ecc24f41887395fd539db75
-      internalID: -9095293184882623434
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesColorPlane_BarrerasSimples_1
-      rect:
-        serializedVersion: 2
-        x: 289
-        y: 0
-        width: 19
-        height: 842
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 40209f6f8a45e6f409f116d1ce9f3eb4
-      internalID: -4190115669843508486
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesColorPlane_BarrerasSimples_2
-      rect:
-        serializedVersion: 2
-        x: 577
-        y: 0
-        width: 19
-        height: 842
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4cecc30d0b592f142b4706ee7cfc0b40
-      internalID: -4374951666414472752
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
