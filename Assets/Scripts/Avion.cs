@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Avion : MonoBehaviour
 {
@@ -13,14 +14,16 @@ public class Avion : MonoBehaviour
     private MovimientoFondo mFondo;
     private Sprite avionSeleccionado, avionSecundario, avionTemporal;
     private static bool primeraMuerte = true;
+    private GraphicRaycaster GR;
 
     //Para establecer un rango de valores
     [Range(3, 8)]
     public float speed = 5f;
     public Text marcadorDePuntos;
-    public GameObject panelMuerte,fondo,botonCambiarAvion;
+    public GameObject panelMuerte,fondo,botonCambiarAvion,imagenBotonCambiarAvion,spawnerBarreras;
     public AudioClip sonidoSalto, sonidoPuntos, sonidoBola, sonidoMuerte;
     public Sprite avionBlanco, avionRojo, avionVerde, avionAzul;
+    
 
 
     //Bola Roja spritesColorPlane_PickUpsYPlaneTrans_0
@@ -62,6 +65,12 @@ public class Avion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*if(Application.platform.Equals(RuntimePlatform.WindowsEditor) || (Application.platform.Equals(RuntimePlatform.WindowsPlayer)){
+
+        }*/
+
+
+        //print("Valor consulta= " + botonCambiarAvion.GetComponent<CheckButonTouched>().isButtonPressed());
         if (Input.GetKeyDown(KeyCode.Space) || PantallaTocada() || Input.GetMouseButtonDown(0))
         {
             if (!isDead)
@@ -76,6 +85,32 @@ public class Avion : MonoBehaviour
         {
             CambiarColor();
         }
+    }
+
+    bool PantallaTocada()
+    {
+
+        /*if (!botonCambiarAvion.GetComponent<CheckButonTouched>().isButtonPressed())
+        {*/
+            //print("no lo estoy tocando");
+            if (Input.touchCount == 1 && Input.touches[0].phase == TouchPhase.Began)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        /*}
+        else
+        {
+            //print("si lo estoy tocando");
+            return false;
+        }*/
+
+
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -471,17 +506,7 @@ public class Avion : MonoBehaviour
     }
 
 
-    bool PantallaTocada()
-    {
-        if (Input.touchCount == 1 && Input.touches[0].phase == TouchPhase.Began)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
+
 
     private void Morir()
     {
@@ -492,7 +517,7 @@ public class Avion : MonoBehaviour
         //Time.timeScale = 0f;
         Time.timeScale = 0.5f;
 
-        StartCoroutine(Esperar());
+        StartCoroutine(Esperar(0.5f));
         
     }
 
@@ -523,14 +548,32 @@ public class Avion : MonoBehaviour
         avionSecundario = avionTemporal;
 
         GetComponent<SpriteRenderer>().sprite = avionSeleccionado;
-        botonCambiarAvion.GetComponent<Image>().sprite = avionSecundario;
+        imagenBotonCambiarAvion.GetComponent<Image>().sprite = avionSecundario;
     }
 
-    IEnumerator Esperar()
+
+    IEnumerator Esperar(float time)
     {
-        yield return new WaitForSecondsRealtime(0.5f);
+        yield return new WaitForSecondsRealtime(time);
         Time.timeScale = 0f;
     }
 
+   /* public bool ButtonContainsPosition(Vector2 xPos)
+    {
 
+        float fMinX = m_xButtonRect.transform.position.x - ((m_xButtonRect.sizeDelta.x * 0.5f) * m_xMenuManager.GetCanvasScaleFactor());
+        float fMaxX = m_xButtonRect.transform.position.x + ((m_xButtonRect.sizeDelta.x * 0.5f) * m_xMenuManager.GetCanvasScaleFactor());
+        float fMinY = m_xButtonRect.transform.position.y - ((m_xButtonRect.sizeDelta.y * 0.5f) * m_xMenuManager.GetCanvasScaleFactor());
+        float fMaxY = m_xButtonRect.transform.position.y + ((m_xButtonRect.sizeDelta.y * 0.5f) * m_xMenuManager.GetCanvasScaleFactor());
+
+        if (xPos.x <= fMaxX && xPos.x >= fMinX)
+        {
+            if (xPos.y <= fMaxY && xPos.y >= fMinY)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }*/
 }

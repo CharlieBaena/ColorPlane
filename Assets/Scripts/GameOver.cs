@@ -56,6 +56,7 @@ public class GameOver : MonoBehaviour
         /*avion*/gameObjectAvion.GetComponent<Avion>().SetPrimeraMuerte(true);
         /*avion*/gameObjectAvion.GetComponent<Avion>().ReiniciarPuntos();
         SceneManager.LoadScene("EscenaPrincipal");
+        
     }
 
     IEnumerator EsperarMainMenu()
