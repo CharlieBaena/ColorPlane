@@ -8,7 +8,7 @@ public class SpawnerParedes : MonoBehaviour
                     prefabMuroCombinado1, prefabMuroCombinado2, prefabMuroCombinado3,
                     prefabMuroCombinado4, prefabMuroCombinado5, prefabMuroCombinado6;
     public float  tiempoEntreSpawns;
-    public int nivelMurosCombinados;
+    //public int nivelMurosCombinados;
     public GameObject panelBarreras;
 
     private static int cont = 0;
@@ -26,7 +26,7 @@ public class SpawnerParedes : MonoBehaviour
     void SpawnObstaculo()
     {
         int random;
-        if (cont > nivelMurosCombinados)
+        if (cont >= 10 && cont <=20 || cont >= 30 && cont <= 40 || cont >=45 && cont <=50 || cont ==52 || cont == 54 || cont == 56 || cont == 58 || cont >= 60)
         {
             random = Random.Range(0, 3);
             switch (random)
@@ -111,5 +111,7 @@ public class SpawnerParedes : MonoBehaviour
         panelBarreras.GetComponent<Image>().sprite = barrerasSpawneadas[0].GetComponentInChildren<SpriteRenderer>().sprite;
         barrerasSpawneadas.RemoveAt(0);
     }
+
+
 
 }
