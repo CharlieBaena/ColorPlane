@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+//using UnityEditor;
 
 public class MainMenu : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class MainMenu : MonoBehaviour
 
     void Start()	
     {
+        Screen.fullScreen = true;
         highscoreText.text = "Highscore: " + PlayerPrefs.GetInt("highscore");
         audioSource = GetComponent<AudioSource>();
     }
@@ -52,6 +54,7 @@ public class MainMenu : MonoBehaviour
         yield return new WaitUntil(() => audioSource.isPlaying == false); 
         if (Screen.fullScreen)
         {
+            //PlayerSettings.resizableWindow = true;
             Screen.SetResolution(1920, 1080, false);
         }
         else
