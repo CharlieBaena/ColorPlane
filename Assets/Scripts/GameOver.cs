@@ -9,7 +9,7 @@ public class GameOver : MonoBehaviour
     public Text highScoreText;
     private AudioSource audioSource;
     private Avion avion;
-    public GameObject botonContinuar,gameObjectAvion,gameObjectSpawner;
+    public GameObject botonContinuar,gameObjectAvion,gameObjectSpawner,gameObjectVideoPlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +33,7 @@ public class GameOver : MonoBehaviour
 
     public void Continuar()
     {
+
         StartCoroutine(EsperarContinuar());
 
     }
@@ -68,10 +69,14 @@ public class GameOver : MonoBehaviour
 
     IEnumerator EsperarContinuar()
     {
+
         yield return new WaitUntil(() => audioSource.isPlaying == false);
         gameObjectSpawner.GetComponent<SpawnerParedes>().SetContador(gameObjectAvion.GetComponent<Avion>().GetPuntos());
         /*avion*/gameObjectAvion.GetComponent<Avion>().SetPrimeraMuerte(false);
-        SceneManager.LoadScene("EscenaPrincipal");
+        //StartCoroutine(gameObjectVideoPlayer.GetComponent<ReproducirVideo>().PlayVideo());
+
+
+        //SceneManager.LoadScene("EscenaPrincipal");
     }
 
 }
