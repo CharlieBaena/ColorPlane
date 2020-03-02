@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public Text highscoreText;
     private AudioSource audioSource;
+    public bool isMute;
 
     void Start()	
     {
@@ -24,6 +25,15 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(EsperarCloseApp());
     }
 
+    public void FullScreen()
+    {
+        StartCoroutine(EsperarFullScreen());
+    }
+    public void Mute()
+    {
+        StartCoroutine(EsperarMute());
+    }
+
 
     IEnumerator EsperarPlay()
     {
@@ -35,5 +45,25 @@ public class MainMenu : MonoBehaviour
     {
         yield return new WaitUntil(() => audioSource.isPlaying == false);
         Application.Quit();
+    }
+
+    IEnumerator EsperarFullScreen()
+    {
+        yield return new WaitUntil(() => audioSource.isPlaying == false); 
+        if (Screen.fullScreen)
+        {
+            Screen.SetResolution(1920, 1080, false);
+        }
+        else
+        {
+            Screen.SetResolution(1920, 1080, true);
+        }
+    }
+
+    IEnumerator EsperarMute()
+    {
+        yield return new WaitUntil(() => audioSource.isPlaying == false);
+        isMute = !isMute;
+        AudioListener.volume = isMute ? 0 : 1;
     }
 }
