@@ -8,7 +8,6 @@ public class GameOver : MonoBehaviour
 {
     public Text highScoreText;
     private AudioSource audioSource;
-    private Avion avion;
     public GameObject botonContinuar,gameObjectAvion,gameObjectSpawner,gameObjectVideoPlayer;
 
     // Start is called before the first frame update
@@ -16,7 +15,6 @@ public class GameOver : MonoBehaviour
     {
         highScoreText.text = "HighScore: " + PlayerPrefs.GetInt("highscore");
         audioSource = GetComponent<AudioSource>();
-        //avion = gameObjectAvion.GetComponent<Avion>();
         botonContinuar.SetActive(gameObjectAvion.GetComponent<Avion>().GetPrimeraMuerte());
     }
 
@@ -54,8 +52,8 @@ public class GameOver : MonoBehaviour
     { 
         yield return new WaitUntil(() => audioSource.isPlaying ==false);
         gameObjectSpawner.GetComponent<SpawnerParedes>().ReiniciarContador();
-        /*avion*/gameObjectAvion.GetComponent<Avion>().SetPrimeraMuerte(true);
-        /*avion*/gameObjectAvion.GetComponent<Avion>().ReiniciarPuntos();
+        gameObjectAvion.GetComponent<Avion>().SetPrimeraMuerte(true);
+        gameObjectAvion.GetComponent<Avion>().ReiniciarPuntos();
         SceneManager.LoadScene("EscenaPrincipal");
         
     }
@@ -64,7 +62,6 @@ public class GameOver : MonoBehaviour
     {
         yield return new WaitUntil(() => audioSource.isPlaying == false);
         SceneManager.LoadScene("MenuPrincipal");
-        //Application.Quit();
     }
 
     IEnumerator EsperarContinuar()
@@ -72,11 +69,9 @@ public class GameOver : MonoBehaviour
 
         yield return new WaitUntil(() => audioSource.isPlaying == false);
         gameObjectSpawner.GetComponent<SpawnerParedes>().SetContador(gameObjectAvion.GetComponent<Avion>().GetPuntos());
-        /*avion*/gameObjectAvion.GetComponent<Avion>().SetPrimeraMuerte(false);
-        //StartCoroutine(gameObjectVideoPlayer.GetComponent<ReproducirVideo>().PlayVideo());
+        gameObjectAvion.GetComponent<Avion>().SetPrimeraMuerte(false);
 
 
-        //SceneManager.LoadScene("EscenaPrincipal");
     }
 
 }

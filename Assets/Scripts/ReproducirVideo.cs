@@ -9,6 +9,7 @@ public class ReproducirVideo : MonoBehaviour
 {
     public RawImage panelVideo;
     public VideoPlayer videoPlayer;
+    
     private AudioSource musica;
 
     public VideoClip vc1, vc2, vc3, vc4, vc5, vc6, vc7;
@@ -25,31 +26,25 @@ public class ReproducirVideo : MonoBehaviour
     }
     public IEnumerator PlayVideo()
     {
+
+
         videoPlayer.clip = escogerAleatorio();
         videoPlayer.Prepare();
         videoPlayer.frame = 0;
         WaitForSeconds waitForSeconds = new WaitForSeconds(1);
 
-        //vP.playOnAwake = true;
         while (!videoPlayer.isPrepared)
         {
-            yield return waitForSeconds;
+            yield return null;
             Debug.Log("Preparing Video");
-            break;
         }
+
         panelVideo.texture = videoPlayer.texture;
         panelVideo.gameObject.SetActive(true);
 
         videoPlayer.Play();
-        /*while (videoPlayer.isPlaying)
-        {
-            yield return waitForSeconds;
-            break;
-        }*/
-
-
         videoPlayer.loopPointReached += LoadScene;
-            
+
 
 
     }
@@ -59,6 +54,7 @@ public class ReproducirVideo : MonoBehaviour
         musica.Play();
         SceneManager.LoadScene("EscenaPrincipal");
     }
+
 
     private VideoClip escogerAleatorio()
     {

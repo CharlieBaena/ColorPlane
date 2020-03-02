@@ -12,6 +12,7 @@ TagManager:
   - BarreraSimple
   - BarreraCombinada
   - music
+  - spawnerParedes
   layers:
   - Default
   - TransparentFX

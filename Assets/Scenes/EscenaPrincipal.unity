@@ -635,7 +635,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &504221839
 AudioSource:
   m_ObjectHideFlags: 0
@@ -643,7 +643,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 504221838}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1fcc14c67c7011142b5ff12aa63d833c, type: 3}
@@ -1209,7 +1209,7 @@ GameObject:
   - component: {fileID: 841111760}
   m_Layer: 0
   m_Name: SpawnerMuros
-  m_TagString: Untagged
+  m_TagString: spawnerParedes
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2203,8 +2203,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1466418007}
-        m_MethodName: Continuar
+      - m_Target: {fileID: 1762884923}
+        m_MethodName: EmpezarCorutina
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2214,8 +2214,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1762884923}
-        m_MethodName: EmpezarCorutina
+      - m_Target: {fileID: 1466418007}
+        m_MethodName: Continuar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2533,7 +2533,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1762884920}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 4dd15421df710cd489bef0cdf16f300d, type: 3}
+  m_VideoClip: {fileID: 0}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -2573,14 +2573,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelVideo: {fileID: 850084619}
   videoPlayer: {fileID: 1762884922}
-  musica: {fileID: 504221839}
-  vc1: {fileID: 0}
-  vc2: {fileID: 0}
-  vc3: {fileID: 0}
-  vc4: {fileID: 0}
-  vc5: {fileID: 0}
-  vc6: {fileID: 0}
-  vc7: {fileID: 0}
+  sonido: {fileID: 1466418008}
+  vc1: {fileID: 32900000, guid: ec536b41a2d63c445872ae0d5422610d, type: 3}
+  vc2: {fileID: 32900000, guid: 796bcc8d81eef0a42bdc329aefddb6cd, type: 3}
+  vc3: {fileID: 32900000, guid: abf15f83faa1e2f4aa3c568687657a17, type: 3}
+  vc4: {fileID: 32900000, guid: aed246c7953404d4eb1e9ff6f8b61af5, type: 3}
+  vc5: {fileID: 32900000, guid: a7c4dc5223c49b644917deef01969030, type: 3}
+  vc6: {fileID: 32900000, guid: 410039a3f8c13b149aa6da2100deb100, type: 3}
+  vc7: {fileID: 32900000, guid: 4dd15421df710cd489bef0cdf16f300d, type: 3}
 --- !u!82 &1762884924
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3007,6 +3007,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Avion
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333216941215875469, guid: dea1ac7744059d64a8dfa0c6465b00fd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dea1ac7744059d64a8dfa0c6465b00fd, type: 3}

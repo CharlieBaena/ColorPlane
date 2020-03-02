@@ -56,8 +56,9 @@ public class Avion : MonoBehaviour
         avionSeleccionado = GetComponent<SpriteRenderer>().sprite;
         avionSecundario = GetComponent<SpriteRenderer>().sprite;
         mFondo = fondo.GetComponent<MovimientoFondo>();   // Find("Scripts").GetComponent(typeof(MovimientoFondo)) as MovimientoFondo;
-        Time.timeScale = 1f;
+        Time.timeScale = 0f;
         marcadorDePuntos.text = puntos.ToString();
+        StartCoroutine(Esperar2(1f));
     }
 
     
@@ -518,6 +519,7 @@ public class Avion : MonoBehaviour
         Time.timeScale = 0.5f;
 
         StartCoroutine(Esperar(0.5f));
+
         
     }
 
@@ -558,22 +560,28 @@ public class Avion : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-   /* public bool ButtonContainsPosition(Vector2 xPos)
+    IEnumerator Esperar2(float time)
     {
+        yield return new WaitForSecondsRealtime(time);
+        Time.timeScale = 1f;
+    }
 
-        float fMinX = m_xButtonRect.transform.position.x - ((m_xButtonRect.sizeDelta.x * 0.5f) * m_xMenuManager.GetCanvasScaleFactor());
-        float fMaxX = m_xButtonRect.transform.position.x + ((m_xButtonRect.sizeDelta.x * 0.5f) * m_xMenuManager.GetCanvasScaleFactor());
-        float fMinY = m_xButtonRect.transform.position.y - ((m_xButtonRect.sizeDelta.y * 0.5f) * m_xMenuManager.GetCanvasScaleFactor());
-        float fMaxY = m_xButtonRect.transform.position.y + ((m_xButtonRect.sizeDelta.y * 0.5f) * m_xMenuManager.GetCanvasScaleFactor());
+    /* public bool ButtonContainsPosition(Vector2 xPos)
+     {
 
-        if (xPos.x <= fMaxX && xPos.x >= fMinX)
-        {
-            if (xPos.y <= fMaxY && xPos.y >= fMinY)
-            {
-                return true;
-            }
-        }
+         float fMinX = m_xButtonRect.transform.position.x - ((m_xButtonRect.sizeDelta.x * 0.5f) * m_xMenuManager.GetCanvasScaleFactor());
+         float fMaxX = m_xButtonRect.transform.position.x + ((m_xButtonRect.sizeDelta.x * 0.5f) * m_xMenuManager.GetCanvasScaleFactor());
+         float fMinY = m_xButtonRect.transform.position.y - ((m_xButtonRect.sizeDelta.y * 0.5f) * m_xMenuManager.GetCanvasScaleFactor());
+         float fMaxY = m_xButtonRect.transform.position.y + ((m_xButtonRect.sizeDelta.y * 0.5f) * m_xMenuManager.GetCanvasScaleFactor());
 
-        return false;
-    }*/
+         if (xPos.x <= fMaxX && xPos.x >= fMinX)
+         {
+             if (xPos.y <= fMaxY && xPos.y >= fMinY)
+             {
+                 return true;
+             }
+         }
+
+         return false;
+     }*/
 }
