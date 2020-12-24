@@ -14,4 +14,17 @@ public class Musica : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
     }
+
+    private void Update()
+    {
+        if (MenuOpciones.musicaMuted)
+        {
+            GetComponent<AudioSource>().mute = true;
+        }
+        else
+        {
+            GetComponent<AudioSource>().mute = false;
+            GetComponent<AudioSource>().volume = MenuOpciones.volumenMusica;
+        }
+    }
 }

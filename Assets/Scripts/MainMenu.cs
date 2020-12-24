@@ -17,6 +17,19 @@ public class MainMenu : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    private void Update()
+    {
+        if (MenuOpciones.efectosMuted)
+        {
+            audioSource.mute = true;
+        }
+        else
+        {
+            audioSource.mute = false;
+            audioSource.volume = MenuOpciones.volumenEfectos;
+        }
+    }
+
     public void Play()
     {
         StartCoroutine(EsperarPlay());
@@ -27,10 +40,12 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(EsperarCloseApp());
     }
 
-    public void FullScreen()
+    public void EscenaMenuOpciones()
     {
-        StartCoroutine(EsperarFullScreen());
+        StartCoroutine(EsperarMenuOpciones());
     }
+
+
     public void Mute()
     {
         StartCoroutine(EsperarMute());
@@ -49,18 +64,10 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    IEnumerator EsperarFullScreen()
+    IEnumerator EsperarMenuOpciones()
     {
-        yield return new WaitUntil(() => audioSource.isPlaying == false); 
-        if (Screen.fullScreen)
-        {
-            //PlayerSettings.resizableWindow = true;
-            Screen.SetResolution(1920, 1080, false);
-        }
-        else
-        {
-            Screen.SetResolution(1920, 1080, true);
-        }
+        yield return new WaitUntil(() => audioSource.isPlaying == false);
+        SceneManager.LoadScene("MenuOpciones");
     }
 
     IEnumerator EsperarMute()

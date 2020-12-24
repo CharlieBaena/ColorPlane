@@ -19,12 +19,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 6824724854440634941, guid: 8ba5fe8364c294548bdde0e77b793ae9,
+      objectReference: {fileID: 6824724854440634941, guid: 74b355ae95c031a42ad1961e99f39e7d,
         type: 3}
+    - target: {fileID: 2566463202665385781, guid: 5cda89471f972ed4fbbc4e3954bb1e4b,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566463202665385781, guid: 5cda89471f972ed4fbbc4e3954bb1e4b,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7440635969357156967, guid: 5cda89471f972ed4fbbc4e3954bb1e4b,
         type: 3}
       propertyPath: m_Name
-      value: BarreraCombinadaRBG Variant
+      value: BarreraCombinadaRBG
       objectReference: {fileID: 0}
     - target: {fileID: 8079081580601592150, guid: 5cda89471f972ed4fbbc4e3954bb1e4b,
         type: 3}

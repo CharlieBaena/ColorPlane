@@ -20,9 +20,9 @@ public class Avion : MonoBehaviour
     [Range(3, 8)]
     public float speed = 5f;
     public Text marcadorDePuntos;
-    public GameObject panelMuerte,fondo,botonCambiarAvion,imagenBotonCambiarAvion,spawnerBarreras;
+    public GameObject panelMuerte,fondo,botonCambiarAvion,panelAvionGuardado,spawnerBarreras,imagenAvionSecundario,botonSaltar,botonCambiar;
     public AudioClip sonidoSalto, sonidoPuntos, sonidoBola, sonidoMuerte;
-    public Sprite avionBlanco, avionRojo, avionVerde, avionAzul;
+    public Sprite avionBlanco, avionRojo, avionVerde, avionAzul, burbujaBlanca, burbujaRoja, burbujaVerde, burbujaAzul;
     
 
 
@@ -66,12 +66,24 @@ public class Avion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (MenuOpciones.efectosMuted)
+        {
+            emisorAudio.mute = true;
+        }
+        else
+        {
+            emisorAudio.mute = false;
+            emisorAudio.volume = MenuOpciones.volumenEfectos;
+        }
+
         /*if(Application.platform.Equals(RuntimePlatform.WindowsEditor) || (Application.platform.Equals(RuntimePlatform.WindowsPlayer)){
 
         }*/
 
 
         //print("Valor consulta= " + botonCambiarAvion.GetComponent<CheckButonTouched>().isButtonPressed());
+        
+        /*
         if (Input.GetKeyDown(KeyCode.Space) || PantallaTocada() || Input.GetMouseButtonDown(0))
         {
             if (!isDead)
@@ -86,6 +98,8 @@ public class Avion : MonoBehaviour
         {
             CambiarColor();
         }
+
+        */
     }
 
     bool PantallaTocada()
@@ -112,6 +126,23 @@ public class Avion : MonoBehaviour
 
 
 
+    }
+
+    public void BotonSaltar()
+    {
+        if (!isDead)
+        {
+            myRB.velocity = Vector2.up * speed; // ---> (0,1) * 5
+            emisorAudio.PlayOneShot(sonidoSalto);
+        }
+    }
+
+    public void BotonCambiarAvion()
+    {
+        if (!isDead)
+        {
+            CambiarColor();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -284,6 +315,90 @@ public class Avion : MonoBehaviour
                                 Morir();
                             }
                             break;
+
+                        case "spritesColorPlane_BarrerasDobles_0": //Barrera doble RG
+
+                            if (collision.gameObject.CompareTag("ColliderRojo")) //Si pasamos por la parte roja de la barrera
+                            {
+                                isDead = false;
+                                collision.gameObject.GetComponentInParent<SpriteRenderer>().gameObject.SetActive(false);
+                                break;
+                            }
+                            else
+                            {
+                                Morir();
+                            }
+                            break;
+
+                        case "spritesColorPlane_BarrerasDobles_1": //Barrera doble BG
+
+                            if (collision.gameObject.CompareTag("ColliderRojo")) //Si pasamos por la parte roja de la barrera
+                            {
+                                isDead = false;
+                                collision.gameObject.GetComponentInParent<SpriteRenderer>().gameObject.SetActive(false);
+                                break;
+                            }
+                            else
+                            {
+                                Morir();
+                            }
+                            break;
+
+                        case "spritesColorPlane_BarrerasDobles_2": //Barrera doble RB
+
+                            if (collision.gameObject.CompareTag("ColliderRojo")) //Si pasamos por la parte roja de la barrera
+                            {
+                                isDead = false;
+                                collision.gameObject.GetComponentInParent<SpriteRenderer>().gameObject.SetActive(false);
+                                break;
+                            }
+                            else
+                            {
+                                Morir();
+                            }
+                            break;
+
+                        case "spritesColorPlane_BarrerasDobles_3": //Barrera doble GB
+
+                            if (collision.gameObject.CompareTag("ColliderRojo")) //Si pasamos por la parte roja de la barrera
+                            {
+                                isDead = false;
+                                collision.gameObject.GetComponentInParent<SpriteRenderer>().gameObject.SetActive(false);
+                                break;
+                            }
+                            else
+                            {
+                                Morir();
+                            }
+                            break;
+
+                        case "spritesColorPlane_BarrerasDobles_4": //Barrera doble BR
+
+                            if (collision.gameObject.CompareTag("ColliderRojo")) //Si pasamos por la parte roja de la barrera
+                            {
+                                isDead = false;
+                                collision.gameObject.GetComponentInParent<SpriteRenderer>().gameObject.SetActive(false);
+                                break;
+                            }
+                            else
+                            {
+                                Morir();
+                            }
+                            break;
+
+                        case "spritesColorPlane_BarrerasDobles_5": //Barrera doble GR
+
+                            if (collision.gameObject.CompareTag("ColliderRojo")) //Si pasamos por la parte roja de la barrera
+                            {
+                                isDead = false;
+                                collision.gameObject.GetComponentInParent<SpriteRenderer>().gameObject.SetActive(false);
+                                break;
+                            }
+                            else
+                            {
+                                Morir();
+                            }
+                            break;
                     }
 
                     break;
@@ -381,6 +496,90 @@ public class Avion : MonoBehaviour
                         case "spritesColorPlane_BarrerasCombinadas_5": //Barrera combinada GBR 
 
                             if (collision.gameObject.CompareTag("ColliderVerde")) //Si pasamos por la parte verde de la barrera
+                            {
+                                isDead = false;
+                                collision.gameObject.GetComponentInParent<SpriteRenderer>().gameObject.SetActive(false);
+                                break;
+                            }
+                            else
+                            {
+                                Morir();
+                            }
+                            break;
+
+                        case "spritesColorPlane_BarrerasDobles_0": //Barrera doble RG
+
+                            if (collision.gameObject.CompareTag("ColliderVerde")) //Si pasamos por la parte roja de la barrera
+                            {
+                                isDead = false;
+                                collision.gameObject.GetComponentInParent<SpriteRenderer>().gameObject.SetActive(false);
+                                break;
+                            }
+                            else
+                            {
+                                Morir();
+                            }
+                            break;
+
+                        case "spritesColorPlane_BarrerasDobles_1": //Barrera doble BG
+
+                            if (collision.gameObject.CompareTag("ColliderVerde")) //Si pasamos por la parte roja de la barrera
+                            {
+                                isDead = false;
+                                collision.gameObject.GetComponentInParent<SpriteRenderer>().gameObject.SetActive(false);
+                                break;
+                            }
+                            else
+                            {
+                                Morir();
+                            }
+                            break;
+
+                        case "spritesColorPlane_BarrerasDobles_2": //Barrera doble RB
+
+                            if (collision.gameObject.CompareTag("ColliderVerde")) //Si pasamos por la parte roja de la barrera
+                            {
+                                isDead = false;
+                                collision.gameObject.GetComponentInParent<SpriteRenderer>().gameObject.SetActive(false);
+                                break;
+                            }
+                            else
+                            {
+                                Morir();
+                            }
+                            break;
+
+                        case "spritesColorPlane_BarrerasDobles_3": //Barrera doble GB 
+
+                            if (collision.gameObject.CompareTag("ColliderVerde")) //Si pasamos por la parte roja de la barrera
+                            {
+                                isDead = false;
+                                collision.gameObject.GetComponentInParent<SpriteRenderer>().gameObject.SetActive(false);
+                                break;
+                            }
+                            else
+                            {
+                                Morir();
+                            }
+                            break;
+
+                        case "spritesColorPlane_BarrerasDobles_4": //Barrera doble BR
+
+                            if (collision.gameObject.CompareTag("ColliderVerde")) //Si pasamos por la parte roja de la barrera
+                            {
+                                isDead = false;
+                                collision.gameObject.GetComponentInParent<SpriteRenderer>().gameObject.SetActive(false);
+                                break;
+                            }
+                            else
+                            {
+                                Morir();
+                            }
+                            break;
+
+                        case "spritesColorPlane_BarrerasDobles_5": //Barrera doble GR
+
+                            if (collision.gameObject.CompareTag("ColliderVerde")) //Si pasamos por la parte roja de la barrera
                             {
                                 isDead = false;
                                 collision.gameObject.GetComponentInParent<SpriteRenderer>().gameObject.SetActive(false);
@@ -498,6 +697,90 @@ public class Avion : MonoBehaviour
                                 Morir();
                             }
                             break;
+
+                        case "spritesColorPlane_BarrerasDobles_0": //Barrera doble RG
+
+                            if (collision.gameObject.CompareTag("ColliderAzul")) //Si pasamos por la parte roja de la barrera
+                            {
+                                isDead = false;
+                                collision.gameObject.GetComponentInParent<SpriteRenderer>().gameObject.SetActive(false);
+                                break;
+                            }
+                            else
+                            {
+                                Morir();
+                            }
+                            break;
+
+                        case "spritesColorPlane_BarrerasDobles_1": //Barrera doble BG
+
+                            if (collision.gameObject.CompareTag("ColliderAzul")) //Si pasamos por la parte roja de la barrera
+                            {
+                                isDead = false;
+                                collision.gameObject.GetComponentInParent<SpriteRenderer>().gameObject.SetActive(false);
+                                break;
+                            }
+                            else
+                            {
+                                Morir();
+                            }
+                            break;
+
+                        case "spritesColorPlane_BarrerasDobles_2": //Barrera doble RB
+
+                            if (collision.gameObject.CompareTag("ColliderAzul")) //Si pasamos por la parte roja de la barrera
+                            {
+                                isDead = false;
+                                collision.gameObject.GetComponentInParent<SpriteRenderer>().gameObject.SetActive(false);
+                                break;
+                            }
+                            else
+                            {
+                                Morir();
+                            }
+                            break;
+
+                        case "spritesColorPlane_BarrerasDobles_3": //Barrera doble GB
+
+                            if (collision.gameObject.CompareTag("ColliderAzul")) //Si pasamos por la parte roja de la barrera
+                            {
+                                isDead = false;
+                                collision.gameObject.GetComponentInParent<SpriteRenderer>().gameObject.SetActive(false);
+                                break;
+                            }
+                            else
+                            {
+                                Morir();
+                            }
+                            break;
+
+                        case "spritesColorPlane_BarrerasDobles_4": //Barrera doble BR
+
+                            if (collision.gameObject.CompareTag("ColliderAzul")) //Si pasamos por la parte roja de la barrera
+                            {
+                                isDead = false;
+                                collision.gameObject.GetComponentInParent<SpriteRenderer>().gameObject.SetActive(false);
+                                break;
+                            }
+                            else
+                            {
+                                Morir();
+                            }
+                            break;
+
+                        case "spritesColorPlane_BarrerasDobles_5": //Barrera doble GR
+
+                            if (collision.gameObject.CompareTag("ColliderAzul")) //Si pasamos por la parte roja de la barrera
+                            {
+                                isDead = false;
+                                collision.gameObject.GetComponentInParent<SpriteRenderer>().gameObject.SetActive(false);
+                                break;
+                            }
+                            else
+                            {
+                                Morir();
+                            }
+                            break;
                     }
 
                     break;
@@ -515,12 +798,18 @@ public class Avion : MonoBehaviour
         isDead = true;
         panelMuerte.SetActive(true);
         //mFondo.CambiarFondo();
-        //Time.timeScale = 0f;
-        Time.timeScale = 0.5f;
+        botonCambiar.SetActive(false);
+        botonSaltar.SetActive(false);
 
-        StartCoroutine(Esperar(0.5f));
 
+        Time.timeScale = 0f;
         
+        
+        //Time.timeScale = 0.5f;
+
+        //StartCoroutine(Esperar(0.5f));
+
+
     }
 
     public bool GetPrimeraMuerte()
@@ -550,7 +839,30 @@ public class Avion : MonoBehaviour
         avionSecundario = avionTemporal;
 
         GetComponent<SpriteRenderer>().sprite = avionSeleccionado;
-        imagenBotonCambiarAvion.GetComponent<Image>().sprite = avionSecundario;
+        print(avionSecundario.name);
+        imagenAvionSecundario.GetComponent<Image>().sprite = avionSecundario;
+
+        switch (avionSecundario.name)
+        {
+            case "spritesColorPlane_PickUpsYPlaneTrans_3": //avion blanco
+                panelAvionGuardado.GetComponent<Image>().sprite = burbujaBlanca;
+                break;
+
+            case "spritesColorPlane_PickUpsYPlaneTrans_4": //avion rojo
+                panelAvionGuardado.GetComponent<Image>().sprite = burbujaRoja;
+                break;
+
+            case "spritesColorPlane_PickUpsYPlaneTrans_5": //avion Verde
+                panelAvionGuardado.GetComponent<Image>().sprite = burbujaVerde;
+                break;
+
+            case "spritesColorPlane_PickUpsYPlaneTrans_6": //avion Azul
+                panelAvionGuardado.GetComponent<Image>().sprite = burbujaAzul;
+                break;
+
+
+        }
+        
     }
 
 

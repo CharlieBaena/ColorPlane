@@ -49,7 +49,7 @@ public class ReproducirVideo : MonoBehaviour
 
     }
 
-    void LoadScene(VideoPlayer vp)
+    public void LoadScene(VideoPlayer vp)
     {
         musica.Play();
         SceneManager.LoadScene("EscenaPrincipal");

@@ -18,6 +18,19 @@ public class GameOver : MonoBehaviour
         botonContinuar.SetActive(gameObjectAvion.GetComponent<Avion>().GetPrimeraMuerte());
     }
 
+    private void Update()
+    {
+        if (MenuOpciones.efectosMuted)
+        {
+            audioSource.mute = true;
+        }
+        else
+        {
+            audioSource.mute = false;
+            audioSource.volume = MenuOpciones.volumenEfectos;
+        }
+    }
+
     public void TryAgain()
     {
         StartCoroutine(EsperarTryAgain());
@@ -36,17 +49,7 @@ public class GameOver : MonoBehaviour
 
     }
 
-    public void FullScreen()
-    {
-        if (Screen.fullScreen)
-        {
-            Screen.SetResolution(1920, 1080, false);
-        }
-        else
-        {
-            Screen.SetResolution(1920, 1080, true);
-        }
-    }
+
 
     IEnumerator EsperarTryAgain()
     { 
