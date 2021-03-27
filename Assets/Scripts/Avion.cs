@@ -12,7 +12,8 @@ public class Avion : MonoBehaviour
     private bool isDead;
     private AudioSource emisorAudio;
     private MovimientoFondo mFondo;
-    private Sprite avionSeleccionado, avionSecundario, avionTemporal;
+    private Sprite avionSeleccionado, avionSecundario, avionTemporal; 
+
     private static bool primeraMuerte = true;
     private GraphicRaycaster GR;
 
@@ -23,7 +24,9 @@ public class Avion : MonoBehaviour
     public GameObject panelMuerte,fondo,botonCambiarAvion,panelAvionGuardado,spawnerBarreras,imagenAvionSecundario,botonSaltar,botonCambiar;
     public AudioClip sonidoSalto, sonidoPuntos, sonidoBola, sonidoMuerte;
     public Sprite avionBlanco, avionRojo, avionVerde, avionAzul, burbujaBlanca, burbujaRoja, burbujaVerde, burbujaAzul;
-    
+    public SpriteRenderer avionHalo;
+    public ParticleSystem PSystem, PSystemCambioColor;
+
 
 
     //Bola Roja spritesColorPlane_PickUpsYPlaneTrans_0
@@ -55,7 +58,8 @@ public class Avion : MonoBehaviour
         isDead = false;
         avionSeleccionado = GetComponent<SpriteRenderer>().sprite;
         avionSecundario = GetComponent<SpriteRenderer>().sprite;
-        mFondo = fondo.GetComponent<MovimientoFondo>();   // Find("Scripts").GetComponent(typeof(MovimientoFondo)) as MovimientoFondo;
+
+        mFondo = fondo.GetComponent<MovimientoFondo>();  
         Time.timeScale = 0f;
         marcadorDePuntos.text = puntos.ToString();
         StartCoroutine(Esperar2(1f));
@@ -164,6 +168,10 @@ public class Avion : MonoBehaviour
 
                     GetComponent<SpriteRenderer>().sprite = avionRojo;
                     avionSeleccionado = avionRojo;
+                    avionHalo.color = Color.red;
+                    PSystem.startColor = Color.red;
+                    PSystemCambioColor.startColor = Color.red;
+                    PSystemCambioColor.Play();
                     emisorAudio.PlayOneShot(sonidoBola);
                     break;
 
@@ -171,6 +179,10 @@ public class Avion : MonoBehaviour
 
                     GetComponent<SpriteRenderer>().sprite = avionVerde;
                     avionSeleccionado = avionVerde;
+                    avionHalo.color = Color.green;
+                    PSystem.startColor = Color.green;
+                    PSystemCambioColor.startColor = Color.green;
+                    PSystemCambioColor.Play();
                     emisorAudio.PlayOneShot(sonidoBola);
                     break;
 
@@ -178,6 +190,10 @@ public class Avion : MonoBehaviour
 
                     GetComponent<SpriteRenderer>().sprite = avionAzul;
                     avionSeleccionado = avionAzul;
+                    avionHalo.color = Color.blue;
+                    PSystem.startColor = Color.blue;
+                    PSystemCambioColor.startColor = Color.blue;
+                    PSystemCambioColor.Play();
                     emisorAudio.PlayOneShot(sonidoBola);
                     break;
 
@@ -834,6 +850,39 @@ public class Avion : MonoBehaviour
 
     public void CambiarColor()
     {
+        switch (avionSecundario.name)
+        {
+            case "spritesColorPlane_PickUpsYPlaneTrans_3": //avion blanco
+                avionHalo.color = Color.white;
+                PSystem.startColor = Color.white;
+                PSystemCambioColor.startColor = Color.white;
+                PSystemCambioColor.Play();
+                break;
+
+            case "spritesColorPlane_PickUpsYPlaneTrans_4": //avion rojo
+                avionHalo.color = Color.red;
+                PSystem.startColor = Color.red;
+                PSystemCambioColor.startColor = Color.red;
+                PSystemCambioColor.Play();
+                break;
+
+            case "spritesColorPlane_PickUpsYPlaneTrans_5": //avion Verde
+                avionHalo.color = Color.green;
+                PSystem.startColor = Color.green;
+                PSystemCambioColor.startColor = Color.green;
+                PSystemCambioColor.Play();
+                break;
+
+            case "spritesColorPlane_PickUpsYPlaneTrans_6": //avion Azul
+                avionHalo.color = Color.blue;
+                PSystem.startColor = Color.blue;
+                PSystemCambioColor.startColor = Color.blue;
+                PSystemCambioColor.Play();
+                break;
+
+
+        }
+
         avionTemporal = avionSeleccionado;
         avionSeleccionado = avionSecundario;
         avionSecundario = avionTemporal;

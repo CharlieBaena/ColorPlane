@@ -1,0 +1,307 @@
+fileFormatVersion: 2
+guid: 42127d8c396fdb340bc8da2af1bfaa86
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 489270048146912515
+    second: spritesColorPlane_PickUpsYPlane_PickUpsYPlane_0
+  - first:
+      213: 5463689146254902002
+    second: spritesColorPlane_PickUpsYPlane_PickUpsYPlane_1
+  - first:
+      213: -1438095435447340146
+    second: spritesColorPlane_PickUpsYPlane_PickUpsYPlane_2
+  - first:
+      213: 3815254403094667527
+    second: spritesColorPlane_PickUpsYPlane_PickUpsYPlane_3
+  - first:
+      213: -5509845142073395583
+    second: spritesColorPlane_PickUpsYPlane_PickUpsYPlane_4
+  - first:
+      213: 4237542120218430018
+    second: spritesColorPlane_PickUpsYPlane_PickUpsYPlane_5
+  - first:
+      213: -1433470789632673951
+    second: spritesColorPlane_PickUpsYPlane_PickUpsYPlane_6
+  - first:
+      213: 8218154004108174922
+    second: spritesColorPlane_PickUpsYPlane_PickUpsYPlane_7
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spritesColorPlane_PickUpsYPlane_PickUpsYPlane_0
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 538
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fb327bfa9ec64a42a62bc065153c4b0
+      internalID: 489270048146912515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesColorPlane_PickUpsYPlane_PickUpsYPlane_1
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 538
+        width: 43
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16a0f5b4afaadf64ab5d5bade3ac98f4
+      internalID: 5463689146254902002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesColorPlane_PickUpsYPlane_PickUpsYPlane_2
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 539
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58367b4862f02d145a8ce5a0f41bddff
+      internalID: -1438095435447340146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesColorPlane_PickUpsYPlane_PickUpsYPlane_3
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 403
+        width: 121
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6da1dce594a8a014b864b5045776130f
+      internalID: 3815254403094667527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesColorPlane_PickUpsYPlane_PickUpsYPlane_4
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 293
+        width: 121
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ac96e2f093988f42939bf14cb653ea7
+      internalID: -5509845142073395583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesColorPlane_PickUpsYPlane_PickUpsYPlane_5
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 298
+        width: 121
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6381c7bcfe61884ebd1d02e3e465543
+      internalID: 4237542120218430018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesColorPlane_PickUpsYPlane_PickUpsYPlane_6
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 300
+        width: 121
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e3028b99f1238249b059ef7a7652e5d
+      internalID: -1433470789632673951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesColorPlane_PickUpsYPlane_PickUpsYPlane_7
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 184
+        width: 121
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c500b5ffcb4ee8245a365aac76199714
+      internalID: 8218154004108174922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
